@@ -1,0 +1,16 @@
+import { ReactNode } from "react";
+import { Navigate } from "react-router-dom";
+import { useCurrentToken } from "../../redux/Fetures/auth/authSlice";
+import { useAppSelector } from "../../redux/Fetures/hooks";
+
+const ProtectedRoute = ({ children }: { children: ReactNode }) => {
+  const token = useAppSelector(useCurrentToken);
+
+  if (!token) {
+    return <Navigate to="/login" replace={true} />;
+  }
+
+  return children;
+};
+
+export default ProtectedRoute;

@@ -2,6 +2,7 @@ import AdminDashBoard from "../pages/Admin/AdminDachBoard";
 import CreateAdmin from "../pages/Admin/CreateAdmin";
 import CreateStudents from "../pages/Admin/CreateStudents";
 import CreateFaculty from "../pages/Admin/CreateFaculty";
+import AcademicSemester from "../pages/Admin/academicManagement/AcademicSemester";
 
 // type TRoutes = {
 //   path: string;
@@ -18,6 +19,17 @@ export const AdminPath = [
     name: "Dashboard",
     path: "dashboard",
     element: <AdminDashBoard />,
+  },
+
+  {
+    name: "Academic Management",
+    children: [
+      {
+        name: "Academic Semester",
+        path: "academic-semester",
+        element: <AcademicSemester />,
+      },
+    ],
   },
 
   {
