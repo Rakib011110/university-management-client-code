@@ -19,6 +19,11 @@ const Login = () => {
   //   },
   // });
 
+  const defaultValues = {
+    userId: "A-0001",
+    password: "sadiya11",
+  };
+
   const [login, { data }] = useLoginMutation();
   console.log("Data=>", data);
 
@@ -46,7 +51,7 @@ const Login = () => {
 
   return (
     <Row justify="center" align="middle" style={{ height: "100vh" }}>
-      <PHForm onSubmit={onSubmit}>
+      <PHForm onSubmit={onSubmit} defaultValues={defaultValues}>
         <PHInput type={"text"} name={"userId"} label="ID" />
         <PHInput type={"password"} name={"password"} label="password" />
         <Button htmlType="submit">Login</Button>
