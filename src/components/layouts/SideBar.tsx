@@ -1,6 +1,11 @@
 import { Layout, Menu } from "antd";
-
 const { Sider } = Layout;
+import { sideBarItemsGenarator } from "../../utilis/sidebarItemsGenarator";
+import { AdminPath } from "../../routes/admin.routes";
+import { facultyPath } from "../../routes/Faculty.routes";
+import { studentPaths } from "../../routes/student.routes";
+import { useAppSelector } from "../../redux/Fetures/hooks";
+import { SelectCurrentUser } from "../../redux/Fetures/auth/authSlice";
 
 const userRole = {
   ADMIN: "admin",
@@ -8,12 +13,6 @@ const userRole = {
   STUDENT: "student",
 };
 
-import { sideBarItemsGenarator } from "../../utilis/sidebarItemsGenarator";
-import { AdminPath } from "../../routes/admin.routes";
-import { facultyPath } from "../../routes/Faculty.routes";
-import { studentPaths } from "../../routes/student.routes";
-import { useAppSelector } from "../../redux/Fetures/hooks";
-import { SelectCurrentUser } from "../../redux/Fetures/auth/authSlice";
 const Sidebar = () => {
   const user = useAppSelector(SelectCurrentUser);
 
